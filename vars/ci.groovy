@@ -1,3 +1,5 @@
+def call(){
+
 pipeline {
     agent any
     stages {
@@ -7,4 +9,5 @@ pipeline {
             }
         }
     }
+}
 }
