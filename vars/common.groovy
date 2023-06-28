@@ -7,3 +7,7 @@ def complie(){
         sh 'mvn package'
     }
 }
+
+def codequality(){
+    sh 'sudo sonar-scanner -Dsonar.host.url=http://172.31.87.135:9000 -Dsonar.login=admin -Dsonar.password=roboshop -Dsonar.projectKey=$(component)'
+}
