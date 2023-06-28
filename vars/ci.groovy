@@ -3,9 +3,11 @@ def call(){
 pipeline {
     agent any
     stages {
-        stage('Example/Ex') {
+        stage('Build/Execute') {
             steps {
-                echo 'Hello World'
+                script{
+                    common.complie()
+                }
             }
         }
     }
