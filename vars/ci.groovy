@@ -24,7 +24,7 @@ pipeline {
 
 post{
     failure{
-        mail bcc: '', body: '${component} pipeline - has failed /n ${BUILD_URL}', cc: '', from: 'algonox1.1@gmail.com', replyTo: '', subject: '${component} pipeline - has failed', to: 'algonox1.1@gmail.com'
+        mail body: '${component} pipeline - has failed /n ${BUILD_URL}', from: 'algonox1.1@gmail.com', subject: '${component} pipeline - has failed', to: 'algonox1.1@gmail.com'
     }
 
 }
