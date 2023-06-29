@@ -5,7 +5,6 @@ pipeline {
     stages {
         stage('Build/Execute') {
             steps {
-                sh 'exit 1'
                 script{
                     common.complie()
                 }
