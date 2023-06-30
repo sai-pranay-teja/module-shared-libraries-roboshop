@@ -2,7 +2,6 @@ def call(){
 
 node {
 
-    stages {
         stage('Build/Execute') {
             common.complie()
         }
@@ -23,5 +22,3 @@ node {
 }
 }
 
-
-}
