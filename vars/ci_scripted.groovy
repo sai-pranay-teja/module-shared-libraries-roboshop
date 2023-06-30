@@ -6,11 +6,11 @@ def call(){
 node {
         
         stage('Check out the repo'){
-            ls -l
+            sh 'ls -l'
             cleanWs()
-            ls -l
+            sh 'ls -l'
             git branch: 'main', url: 'https://github.com/sai-pranay-teja/cart'
-            ls -l
+            sh'ls -l'
 
             
         }
