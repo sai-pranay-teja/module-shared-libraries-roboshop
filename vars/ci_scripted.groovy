@@ -2,8 +2,13 @@ def call(){
     if (!env.sonar_opts) {
         sonar_opts=""
     } 
+    if (env.TAG_NAME !=~ ".*") {
+        env.OG_TAG="true"
+    } 
 
 node {
+
+
         
         stage('Check out the repo'){
             sh 'ls -l'
@@ -24,7 +29,7 @@ node {
             }
         }
 
-        if (env.TAG_NAME !=~ ".*"){
+        if (env.OG_TAG != "true"){
             stage('Test Cases') {
                 common.testcases()
         }
