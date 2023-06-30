@@ -24,7 +24,7 @@ node {
             }
         }
 
-        if (env.TAG_NAME){
+        if (env.TAG_NAME ==~ ".*"){
             stage('Test Cases') {
                 common.testcases()
         }
