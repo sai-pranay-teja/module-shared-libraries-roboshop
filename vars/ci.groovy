@@ -11,13 +11,13 @@ pipeline {
             }
         }
 
-        // stage('Code Quality') {
-        //     steps {
-        //         script{
-        //             common.codequality()
-        //         }
-        //     }
-        // }
+        stage('Code Quality') {
+            steps {
+                script{
+                    common.codequality()
+                }
+            }
+        }
     }
 //     post{
 //         failure{
