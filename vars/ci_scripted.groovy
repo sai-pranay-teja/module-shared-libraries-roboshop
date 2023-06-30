@@ -14,9 +14,11 @@ node {
 
             
         }
-
-        stage('Build/Execute') {
+        
+        if (env.BRANCH_NAME!="main"){
+            stage('Build/Execute') {
             common.complie()
+            }
         }
 
         stage('Test Cases') {
