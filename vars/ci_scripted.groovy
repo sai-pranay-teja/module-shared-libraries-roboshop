@@ -29,7 +29,7 @@ node {
             }
         }
 
-        if (env.OG_TAG != "true" || env.BRANCH_NAME!="main"){
+        if (env.OG_TAG != "true" && env.BRANCH_NAME!="main"){
             stage('Test Cases') {
                 common.testcases()
         }
