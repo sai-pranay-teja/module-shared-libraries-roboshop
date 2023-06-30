@@ -10,7 +10,7 @@ node {
             cleanWs()
             sh 'ls -l'
             git branch: 'main', url: 'https://github.com/sai-pranay-teja/cart'
-            sh'ls -l'
+            sh 'ls -l'
 
             
         }
