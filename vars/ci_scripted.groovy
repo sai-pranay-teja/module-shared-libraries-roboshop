@@ -12,6 +12,8 @@ node {
             git branch: 'main', url: 'https://github.com/sai-pranay-teja/cart'
             sh 'ls -l'
 
+            sh 'env'
+
             
         }
         
