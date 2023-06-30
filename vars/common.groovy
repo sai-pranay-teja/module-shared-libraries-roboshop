@@ -12,6 +12,6 @@ def complie(){
 //     sh 'sonar-scanner -Dsonar.host.url=http://172.31.87.135:9000 -Dsonar.login=admin -Dsonar.password=roboshop -Dsonar.projectKey=$(component)'
 // }
 
-def codequality(){
-    sh 'sonar-scanner -Dsonar.host.url=http://dev-sonarqube.practise-devops.online:9000 -Dsonar.login=admin -Dsonar.password=roboshop -Dsonar.projectKey=${component} ${sonar_opts}'
-}
+// def codequality(){
+//     sh 'sonar-scanner -Dsonar.host.url=http://dev-sonarqube.practise-devops.online:9000 -Dsonar.login=admin -Dsonar.password=roboshop -Dsonar.projectKey=${component} ${sonar_opts}'
+// }
