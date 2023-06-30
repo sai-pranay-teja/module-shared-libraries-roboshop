@@ -13,6 +13,7 @@ pipeline {
         }
 
         stage('Code Quality') {
+            when { not { branch 'main' } }
             steps {
                 script{
                     common.codequality()
