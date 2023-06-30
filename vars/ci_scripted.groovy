@@ -2,7 +2,7 @@ def call(){
     if (!env.sonar_opts) {
         sonar_opts=""
     } 
-    if (env.TAG_NAME !=~ ".*") {
+    if (env.TAG_NAME ==~ ".*") {
         env.OG_TAG="true"
     }else{
         env.OG_TAG="false"
