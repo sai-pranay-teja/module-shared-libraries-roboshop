@@ -4,8 +4,7 @@ def call(){
     } 
     if (env.TAG_NAME !=~ ".*") {
         env.OG_TAG="true"
-    }
-    else{
+    }else{
         env.OG_TAG="false"
     }
 
