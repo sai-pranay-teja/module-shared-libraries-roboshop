@@ -4,6 +4,7 @@ pipeline {
     agent any
     stages {
         stage('Build/Execute') {
+            when { not { branch 'main' } }
             steps {
                 script{
                     common.complie()
