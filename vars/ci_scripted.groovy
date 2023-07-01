@@ -41,6 +41,7 @@ node {
             stage('Artifacts') {
                 common.complie()
             }
+            
 
             stage('Package') {
                 common.complie()
