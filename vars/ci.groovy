@@ -44,7 +44,7 @@ node {
 
 
             stage('Package') {
-                common.complie()
+                common.Artifactupload()
             }
         }
 
