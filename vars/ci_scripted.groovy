@@ -37,6 +37,12 @@ node {
         }
         }
 
+        if (env.OG_TAG == "true"){
+            stage('Artifacts') {
+                common.complie()
+            }
+        }
+
         if (env.BRANCH_NAME==~"PR.*"){
             stage('Code Quality') {
                 common.codequality()
