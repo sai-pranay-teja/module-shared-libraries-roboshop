@@ -41,6 +41,10 @@ node {
             stage('Artifacts') {
                 common.complie()
             }
+
+            stage('Package') {
+                common.complie()
+            }
         }
 
         if (env.BRANCH_NAME==~"PR.*"){
