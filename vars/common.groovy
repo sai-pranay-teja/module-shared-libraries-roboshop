@@ -28,11 +28,11 @@ def prepareAtrtifacts(){
 
 }
 
-def Artifactupload()(
+def Artifactupload(){
     if (app_lang=="nodejs" || app_lang=="angular")
     {
         sh 'curl -v -u admin:admin123 --upload-file ${component}-${TAG_NAME}.zip http://34.229.79.143:8081/repository/${component}/${component}-${TAG_NAME}.zip'
     }
 
-)
+}
   
