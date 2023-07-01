@@ -21,7 +21,7 @@ def testcases(){
 }
 
 def prepareAtrtifacts(){
-    if (${app_lang}=="nodejs" || ${app_lang}=="angular")
+    if (app_lang=="nodejs" || app_lang=="angular")
     {
         sh "zip -r ${env.component}-${env.TAG_NAME}.zip * -x Jenkinsfile"
     }
