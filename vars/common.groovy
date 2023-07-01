@@ -20,7 +20,7 @@ def testcases(){
     sh 'echo OK'
 }
 
-def prepareAtrtifacts{
+def prepareAtrtifacts(){
     if (${app_lang}=="nodejs" || ${app_lang}=="angular")
     {
         sh "zip -r ${env.component}-${env.TAG_NAME}.zip * -x Jenkinsfile"
