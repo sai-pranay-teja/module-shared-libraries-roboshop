@@ -26,6 +26,12 @@ def prepareAtrtifacts(){
         sh 'zip -r ${component}-${TAG_NAME}.zip * -x Jenkinsfile'
     }
 
+    if (app_lang="maven")
+    {
+        sh 'zip -r ${component}-${TAG_NAME}.zip ${component}.jar ${TAG_NAME}'
+
+    }
+
 }
 
 def Artifactupload(){
