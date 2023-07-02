@@ -29,10 +29,7 @@ def prepareAtrtifacts(){
 }
 
 def Artifactupload(){
-    if (app_lang=="nodejs" || app_lang=="angular")
-    {
-        sh 'curl -v -u admin:admin123 --upload-file ${component}-${TAG_NAME}.zip http://dev-nexus.practise-devops.online:8081/repository/${component}/${component}-${TAG_NAME}.zip'
-    }
+    sh 'curl -v -u admin:admin123 --upload-file ${component}-${TAG_NAME}.zip http://dev-nexus.practise-devops.online:8081/repository/${component}/${component}-${TAG_NAME}.zip'
 
 }
   
