@@ -21,7 +21,7 @@ pipeline {
 
         stage('Server Deployment') {
             steps {
-                sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=${ENV}-${COMPONENT} "--query "Reservations[*].Instances[*].PrivateIpAddress" --output text > /tmp/private_ips'
+                sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=${ENV}-${COMPONENT} "--query "Reservations[*].Instances[*].PrivateIpAddress" --output text | xargs > /tmp/private_ips'
 
                 sh 'ansible-playbook -i /tmp/private_ips, roboshop-app.yml -e env=${ENV} -e ansible_user=centos -e ansible_password=DevOps321'
             }
