@@ -8,7 +8,7 @@ pipeline {
 
     
     parameters {
-        string(name: 'APP-VERSION', defaultValue: '', description: 'Choose the App Version')
+        string(name: 'APP_VERSION', defaultValue: '', description: 'Choose the App Version')
         string(name: 'COMPONENT', defaultValue: '', description: 'Choose the Component')
         string(name: 'ENV', defaultValue: '', description: 'Choose the Environment')
     }
@@ -20,7 +20,7 @@ pipeline {
         // }
         stage('Update the parameters') {
             steps {
-                sh 'aws ssm put-parameter --name ${ENV}.${COMPONENT}.app_version --type "String" --value "${APP-VERSION}" --overwrite'
+                sh 'aws ssm put-parameter --name ${ENV}.${COMPONENT}.app_version --type "String" --value "${APP_VERSION}" --overwrite'
             }
         }
 
