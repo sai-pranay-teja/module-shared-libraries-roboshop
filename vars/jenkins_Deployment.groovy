@@ -20,7 +20,7 @@ pipeline {
         // }
         stage('Update the parameters') {
             steps {
-                sh 'aws ssm put-parameter --name ${ENV}.${COMPONENT}.app_version --value ${APP-VERSION} --type "String" --overwrite'
+                sh 'aws ssm put-parameter --name ${ENV}.${COMPONENT}.app_version --value "${APP-VERSION}" --type "String" --overwrite'
             }
         }
 
