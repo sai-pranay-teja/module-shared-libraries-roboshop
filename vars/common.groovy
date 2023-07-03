@@ -21,7 +21,7 @@ def testcases(){
 }
 
 def prepareAtrtifacts(){
-    echo ${TAG_NAME}>VERSION
+    sh 'echo ${TAG_NAME}>VERSION'
     if (app_lang=="maven")
     {
         sh 'zip -r ${component}-${TAG_NAME}.zip ${component}.jar schema VERSION'
