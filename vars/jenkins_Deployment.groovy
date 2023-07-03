@@ -13,11 +13,11 @@ pipeline {
         string(name: 'ENV', defaultValue: '', description: 'Choose the Environment')
     }
     stages {
-        stage('Ansible installation'){
-            steps{
-                sh 'sudo labauto ansible'
-            }
-        }
+        // stage('Ansible installation'){
+        //     steps{
+        //         sh 'sudo labauto ansible'
+        //     }
+        // }
         stage('Update the parameters') {
             steps {
                 sh 'aws ssm put-parameter --name ${ENV}.${COMPONENT}.app_version --value ${APP-VERSION} --type "String" --overwrite'
