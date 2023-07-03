@@ -12,13 +12,15 @@ pipeline {
         string(name: 'ACTION', defaultValue: '', description: 'Choose the Action')
     }
     stages {
+
+
         stage('init') {
             steps {
-                sh 'terraform init -backend-config'
+                sh 'terraform init -backend-config env-${ENV}/state.tfvars'
             }
         }
 
-        stage('apply') {
+        stage('apply/destroy') {
             steps {
                 sh 'terraform ${ACTION} -var-file=env-${ENV}/main.tfvars -auto-approve'
             }
