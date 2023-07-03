@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('Ansible installation'){
             steps{
-                sh 'labauto ansible'
+                sh 'sudo labauto ansible'
             }
         }
         stage('Update the parameters') {
