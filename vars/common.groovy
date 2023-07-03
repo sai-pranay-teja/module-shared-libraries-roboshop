@@ -23,7 +23,7 @@ def testcases(){
 def prepareAtrtifacts(){
     if (app_lang=="maven")
     {
-        sh 'zip -r ${component}-${TAG_NAME}.zip ${component}.jar ${TAG_NAME}'
+        sh 'zip -r ${component}-${TAG_NAME}.zip ${component}.jar schema ${TAG_NAME}'
 
     }
     else{
