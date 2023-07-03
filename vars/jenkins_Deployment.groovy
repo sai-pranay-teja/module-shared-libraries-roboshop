@@ -28,7 +28,7 @@ pipeline {
             steps {
                 sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=${ENV}-${COMPONENT} "--query "Reservations[*].Instances[*].PrivateIpAddress" --output text | xargs > /tmp/private_ips'
 
-                sh 'ansible-playbook -i /tmp/private_ips, roboshop-app.yml -e env=${ENV} -e ansible_user=centos -e ansible_password=DevOps321'
+                sh 'ansible-playbook -i /tmp/private_ips roboshop-app.yml -e env=${ENV} -e components=${COMPONENT} -e ansible_user=centos -e ansible_password=DevOps321'
             }
 
         }
