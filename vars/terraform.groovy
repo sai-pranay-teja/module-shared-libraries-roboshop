@@ -13,25 +13,20 @@ pipeline {
         string(name: 'CLEAN', defaultValue: '', description: 'Choose the cleaning action')
     }
     stages {
-        if(CLEAN=="no")
-        {
-            stage('init') {
-                steps {
-                    sh 'terraform init -backend-config env-${ENV}/state.tfvars'
+        stage('init') {
+            if (${CLEAN}=="no"){
+              steps {
+                sh 'terraform init -backend-config env-${ENV}/state.tfvars'
             }
-        }
-        }
-
-        if(CLEAN=="yes")
-        {
-            stage('init') {
-                steps {
-                    cleanWs()
-                    sh 'terraform init -backend-config env-${ENV}/state.tfvars'
             }
-        }
+            else{
+              steps {
+                cleanWs()
+                sh 'terraform init -backend-config env-${ENV}/state.tfvars'
+            }
+            }
 
-        }
+            }
 
         stage('apply/destroy') {
             steps {
@@ -44,6 +39,13 @@ pipeline {
 
 }
 
-}
+
+        }
+
+
+
+
+
+
 
 
