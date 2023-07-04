@@ -10,7 +10,6 @@ pipeline {
     parameters {
         string(name: 'ENV', defaultValue: 'dev', description: 'Choose the Environment')
         string(name: 'ACTION', defaultValue: '', description: 'Choose the Action')
-        string(name: 'CLEAN', defaultValue: '', description: 'Choose the cleaning action')
     }
     stages {
         stage('init') {
@@ -20,7 +19,7 @@ pipeline {
                 // sh 'terraform init -backend-config env-${ENV}/state.tfvars'
                 sh 'terraform init'
             }
-
+        }
 
 
         stage('apply/destroy') {
