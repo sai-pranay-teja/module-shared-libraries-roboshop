@@ -21,16 +21,17 @@ def testcases(){
 }
 
 def prepareAtrtifacts(){
-    sh 'echo ${TAG_NAME}>VERSION'
-    if (app_lang=="maven")
-    {
-        sh 'zip -r ${component}-${TAG_NAME}.zip ${component}.jar schema VERSION'
+    // sh 'echo ${TAG_NAME}>VERSION'
+    // if (app_lang=="maven")
+    // {
+    //     sh 'zip -r ${component}-${TAG_NAME}.zip ${component}.jar schema VERSION'
 
-    }
-    else{
-        sh 'zip -r ${component}-${TAG_NAME}.zip * -x Jenkinsfile'
+    // }
+    // else{
+    //     sh 'zip -r ${component}-${TAG_NAME}.zip * -x Jenkinsfile'
 
-    }
+    // }
+    sh 'docker build -t 581798224530.dkr.ecr.us-east-1.amazonaws.com/${COMPONENT}:${TAG_NAME} .'
 
 }
 
