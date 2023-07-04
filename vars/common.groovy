@@ -36,7 +36,8 @@ def prepareAtrtifacts(){
 }
 
 def Artifactupload(){
-    sh 'curl -v -u admin:admin123 --upload-file ${component}-${TAG_NAME}.zip http://dev-nexus.practise-devops.online:8081/repository/${component}/${component}-${TAG_NAME}.zip'
-
+    // sh 'curl -v -u admin:admin123 --upload-file ${component}-${TAG_NAME}.zip http://dev-nexus.practise-devops.online:8081/repository/${component}/${component}-${TAG_NAME}.zip'
+    sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 581798224530.dkr.ecr.us-east-1.amazonaws.com'
+    sh 'docker push 581798224530.dkr.ecr.us-east-1.amazonaws.com/${COMPONENT}:${TAG_NAME}'
 }
   
