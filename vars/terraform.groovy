@@ -19,7 +19,8 @@ pipeline {
             }
             
               steps {
-                sh 'terraform init -backend-config env-${ENV}/state.tfvars'
+                // sh 'terraform init -backend-config env-${ENV}/state.tfvars'
+                sh 'terraform init'
             }
             }
 
@@ -30,7 +31,8 @@ pipeline {
             
               steps {
                 cleanWs()
-                sh 'terraform init -backend-config env-${ENV}/state.tfvars'
+                // sh 'terraform init -backend-config env-${ENV}/state.tfvars'
+                sh 'terraform init'
             }
             }
 
