@@ -29,7 +29,7 @@ pipeline {
 
         stage('Server Deployment') {
             steps {
-                sh 'helm create ${COMPONENT} APP/helm/${ENV}.yaml'
+                sh 'helm install ${COMPONENT} -f APP/helm/${ENV}.yaml'
 
             }
 
