@@ -29,7 +29,7 @@ pipeline {
 
         stage('Server Deployment') {
             steps {
-                sh 'helm install ${COMPONENT} . -f APP/helm/${ENV}.yaml --set appversion=${APP_VERSION}'
+                sh 'helm upgrade -i ${COMPONENT} . -f APP/helm/${ENV}.yaml --set appversion=${APP_VERSION}'
 
             }
 
