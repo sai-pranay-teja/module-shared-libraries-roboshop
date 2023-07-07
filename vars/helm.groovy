@@ -21,7 +21,7 @@ pipeline {
         stage('Clone Application') {
             steps {
                 dir('APP'){
-                    git branch: 'main', url: "https://github.com/sai-pranay-teja/${component}"
+                    git branch: 'main', url: "https://github.com/sai-pranay-teja/${COMPONENT}"
                 }
 
             }
@@ -29,6 +29,7 @@ pipeline {
 
         stage('Server Deployment') {
             steps {
+                sh 'helm create ${COMPONENT} APP/helm/${ENV}.yaml'
 
             }
 
