@@ -24,12 +24,18 @@ pipeline {
                     git branch: 'main', url: "https://github.com/sai-pranay-teja/${COMPONENT}"
                 }
 
+                dir('HELM'){
+                    git branch: 'main', url: "https://github.com/sai-pranay-teja/roboshop-helm-chart"
+                }
+
+                
+
             }
         }
 
         stage('Server Deployment') {
             steps {
-                sh 'helm upgrade -i ${COMPONENT} . -f APP/helm/${ENV}.yaml --set appversion=${APP_VERSION}'
+                sh 'helm upgrade -i ${COMPONENT} HELM -f APP/helm/${ENV}.yaml --set appversion=${APP_VERSION}'
 
             }
 
